@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realestate/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,25 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Real Estate',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.amber.shade100,
-          title: Text('Welcome Home'),
-          centerTitle: true,
+        debugShowCheckedModeBanner: false,
+        title: 'Real Estate',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
         ),
-        body: Column(
-          children: [
-            Text('Hi Dorcas'),
-            Text('Hi Emma'),
-            Text('Hi Ogonna'),
-          ],
-        ),
-      ),
-    );
+        home: HomePage());
   }
 }
