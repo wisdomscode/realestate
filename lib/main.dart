@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realestate/home_page.dart';
+import 'package:realestate/onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());

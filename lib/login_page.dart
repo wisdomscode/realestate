@@ -1,65 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:realestate/home_page.dart';
+import 'package:realestate/widgets/button_widget.dart';
+import 'package:realestate/widgets/text_formfield.dart';
 import 'package:realestate/widgets/text_widget.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool isObsecured = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomTextWidget(
+            const CustomTextWidget(
               text: 'Login Page',
               fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
-            CustomTextWidget(
+            const CustomTextWidget(
               text: 'Welcome back',
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
-            SizedBox(height: 30),
-            TextFormField(
-              decoration: InputDecoration(
-                // hintText: 'Email',
-                label: CustomTextWidget(text: 'Email Address'),
-                labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(width: 1, color: Colors.grey),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(width: 1, color: Colors.grey),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(width: 2, color: Colors.red),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                prefixIcon: Icon(Icons.person),
-              ),
+            const SizedBox(height: 30),
+            CustomTextFormField(
+              label: const CustomTextWidget(text: 'Email'),
+              prefixIcon: Icon(Icons.email),
             ),
-            SizedBox(height: 20),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                  // hintText: 'Paasword',
-                  label: CustomTextWidget(text: 'Password'),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: Colors.grey),
-                    borderRadius: BorderRadius.circular(30),
+            const SizedBox(height: 20),
+            CustomTextFormField(
+              label: const CustomTextWidget(text: 'Password'),
+              prefixIcon: Icon(Icons.key),
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    isObsecured = !isObsecured;
+                  });
+                },
+                icon: isObsecured ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+              ),
+              obscureText: isObsecured,
+            ),
+            const SizedBox(height: 50),
+            CustomButtonWidget(
+              name: 'LOGIN',
+              submit: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 2, color: Colors.red),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  prefixIcon: Icon(Icons.key),
-                  suffixIcon: Icon(Icons.remove_red_eye)),
+                );
+              },
             ),
           ],
         ),
