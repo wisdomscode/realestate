@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:realestate/login_page.dart';
-import 'package:realestate/register_page.dart';
+import 'package:realestate/screens/auth/login_page.dart';
+import 'package:realestate/screens/auth/register_page.dart';
 import 'package:realestate/widgets/button_widget.dart';
 import 'package:realestate/widgets/social_login_buttons.dart';
 

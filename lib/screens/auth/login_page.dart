@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:realestate/home_page.dart';
+import 'package:realestate/bottom_nav_bar.dart';
+import 'package:realestate/screens/home_page.dart';
 import 'package:realestate/widgets/button_widget.dart';
 import 'package:realestate/widgets/text_formfield.dart';
 import 'package:realestate/widgets/text_widget.dart';
@@ -59,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
               submit: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => HomePage(),
+                    builder: (context) => BottomNavBarPage(),
                   ),
                 );
               },

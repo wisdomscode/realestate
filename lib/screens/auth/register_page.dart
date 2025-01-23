@@ -34,26 +34,26 @@ class _RegisterPageState extends State<RegisterPage> {
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 30),
-            CustomTextFormField(
-              label: const CustomTextWidget(text: 'Username'),
+            const CustomTextFormField(
+              label: CustomTextWidget(text: 'Username'),
               prefixIcon: Icon(Icons.person),
             ),
-            SizedBox(height: 20),
-            CustomTextFormField(
-              label: const CustomTextWidget(text: 'Email'),
+            const SizedBox(height: 20),
+            const CustomTextFormField(
+              label: CustomTextWidget(text: 'Email'),
               prefixIcon: Icon(Icons.email),
             ),
             const SizedBox(height: 20),
             CustomTextFormField(
               label: const CustomTextWidget(text: 'Password'),
-              prefixIcon: Icon(Icons.key),
+              prefixIcon: const Icon(Icons.key),
               suffixIcon: IconButton(
                 onPressed: () {
                   setState(() {
                     isObsecured = !isObsecured;
                   });
                 },
-                icon: isObsecured ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+                icon: isObsecured ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off),
               ),
               obscureText: isObsecured,
             ),
