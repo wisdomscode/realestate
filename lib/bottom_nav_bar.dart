@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realestate/screens/favourites_page.dart';
+import 'package:realestate/screens/posts_page.dart';
 import 'package:realestate/screens/home_page.dart';
 import 'package:realestate/screens/notification_page.dart';
 import 'package:realestate/screens/profile_page.dart';
@@ -15,7 +15,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
   int indexPage = 0;
   final pages = const [
     HomePage(),
-    FavouritesPage(),
+    PostPage(),
     NotificationPage(),
     ProfilePage(),
   ];
@@ -27,7 +27,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         currentIndex: indexPage,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourites'),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Users'),
           BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Notification'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],

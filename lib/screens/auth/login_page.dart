@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:realestate/bottom_nav_bar.dart';
-import 'package:realestate/screens/home_page.dart';
 import 'package:realestate/widgets/button_widget.dart';
 import 'package:realestate/widgets/text_formfield.dart';
 import 'package:realestate/widgets/text_widget.dart';
@@ -36,21 +35,21 @@ class _LoginPageState extends State<LoginPage> {
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 30),
-            CustomTextFormField(
-              label: const CustomTextWidget(text: 'Email'),
+            const CustomTextFormField(
+              label: CustomTextWidget(text: 'Email'),
               prefixIcon: Icon(Icons.email),
             ),
             const SizedBox(height: 20),
             CustomTextFormField(
               label: const CustomTextWidget(text: 'Password'),
-              prefixIcon: Icon(Icons.key),
+              prefixIcon: const Icon(Icons.key),
               suffixIcon: IconButton(
                 onPressed: () {
                   setState(() {
                     isObsecured = !isObsecured;
                   });
                 },
-                icon: isObsecured ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+                icon: isObsecured ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off),
               ),
               obscureText: isObsecured,
             ),
@@ -60,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
               submit: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => BottomNavBarPage(),
+                    builder: (context) => const BottomNavBarPage(),
                   ),
                 );
               },
