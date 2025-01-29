@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realestate/onboarding_page.dart';
 import 'package:realestate/screens/detail_property_page.dart';
 import 'package:realestate/models/dommy_properties.dart';
 import 'package:realestate/models/property_model.dart';
@@ -46,7 +47,15 @@ class _HomePageState extends State<HomePage> {
             centerTitle: true,
             actions: [
               IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
+              IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => OnboardingScreen(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.logout)),
               const SizedBox(width: 20),
             ],
           ),
@@ -179,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Card(
                           elevation: 10,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                           child: Column(
                             children: [
                               ClipRRect(
@@ -187,10 +196,10 @@ class _HomePageState extends State<HomePage> {
                                 child: Image.asset(
                                   property.image,
                                   fit: BoxFit.cover,
-                                  height: 150,
+                                  height: 120,
                                 ),
                               ),
-                              SizedBox(height: 5),
+                              // SizedBox(height: 5),
                               CustomTextWidget(
                                 text: "₦${property.price}",
                                 fontWeight: FontWeight.bold,
